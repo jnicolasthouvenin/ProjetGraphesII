@@ -22,7 +22,7 @@ public interface Listes {
 	 */
 	default ArrayList<Integer> suiteEntiersCroissants(int inf,int sup) {
 		ArrayList<Integer> liste = new ArrayList<Integer>(sup-inf+1);
-		for(int indice = 0; indice <= (inf-sup+1); indice ++) {
+		for(int indice = 0; indice < (inf-sup+1); indice ++) {
 			liste.set(indice, indice + inf);
 		}
 		return liste;
