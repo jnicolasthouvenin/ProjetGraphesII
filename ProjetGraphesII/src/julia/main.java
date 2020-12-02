@@ -225,7 +225,10 @@ function elever(S::Array{Sommet,1},indiceSommet::Int,V::Vector{Vector{Int}},A::A
             #println("erreur precondition [elever] : un des voisins est plus bas que U !")
             return false
         end
-        if hauteurVoisin < minH # on a trouvé une nouvelle hauteur minimum
+        #=if hauteurVoisin < minH # on a trouvé une nouvelle hauteur minimum
+            minH = hauteurVoisin # mise à jour de hauteur minimum
+        end=#
+    	if hauteurVoisin < minH && A[indiceSommet,indiceVoisin].r > 0 # on a trouvé une nouvelle hauteur minimum
             minH = hauteurVoisin # mise à jour de hauteur minimum
         end
     end
