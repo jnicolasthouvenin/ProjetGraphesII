@@ -1,17 +1,21 @@
-package code;
+package app;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class Graphe {
+import vendors.Listes;
+
+public class Graphe implements Listes {
 	private ArrayList<Integer> M;
 	private ArrayList<Sommet> S;
+	private int nbSommets;
 	private ArrayList<ArrayList<Integer>> A;
 	private LinkedList<Integer> V;
 	
 	public Graphe() {
 		this.M = new ArrayList<Integer>();
 		this.S = new ArrayList<Sommet>();
+		this.nbSommets = 0;
 		this.A = new ArrayList<ArrayList<Integer>>();
 		this.V = new LinkedList<Integer>();
 	}
@@ -30,5 +34,13 @@ public class Graphe {
 	
 	public void setV(LinkedList<Integer> nouveauV) {
 		V = nouveauV;
+	}
+	
+	public int preflotsAvant() {
+		
+		ArrayList<Integer> listeSommets = new ArrayList<Integer>(nbSommets);
+		
+		
+		return 0;
 	}
 }

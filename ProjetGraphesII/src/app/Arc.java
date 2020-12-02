@@ -1,4 +1,4 @@
-package code;
+package app;
 
 public class Arc {
 	private int r;
