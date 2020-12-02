@@ -20,10 +20,10 @@ public interface Listes {
 	 * @param       inf le plus petit entier.
 	 * @param		sup le plus grand entier.
 	 */
-	default ArrayList<Integer> suiteEntiersCroissants(int inf,int sup) {
-		ArrayList<Integer> liste = new ArrayList<Integer>(sup-inf+1);
+	default Integer[] suiteEntiersCroissants(int inf,int sup) {
+		Integer[] liste = new Integer[sup-inf+1];
 		for(int indice = 0; indice < (inf-sup+1); indice ++) {
-			liste.set(indice, indice + inf);
+			liste[indice] = indice + inf;
 		}
 		return liste;
 	}

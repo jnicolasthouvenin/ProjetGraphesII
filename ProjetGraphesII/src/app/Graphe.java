@@ -5,9 +5,6 @@
 
 package app;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-
 import vendors.Listes;
 
 /**
@@ -65,14 +62,44 @@ public class Graphe implements Listes {
 	 * @return nouveau graphe dans lequel on a effectué un algorithme de préflots avant.
 	 */
 	public Graphe preflotsAvant() {
-		
-		Integer[][] listeSommets = suiteEntiersCroissants(2,(S.length-1));
+		int nbSommets = S.length;
+		Integer[] listeSommets = suiteEntiersCroissants(2,(nbSommets-1));
 		// initialisation
 	    for(int voisin : V[1]){
 	    	pousser(S,1,voisin,A);
 	    }
+	    
+	    int indiceListe = 1;
+	    int debug = 1;
+	    while(indiceListe <= nbSommets-2 && debug <= 100) {
+	    	debug ++;
+	    	int sommet = listeSommets[indiceListe];
+	        boolean hauteurModifiee = decharger(S,sommet,V,A);
+	        if(hauteurModifiee) {
+	        	listeSommets[indiceListe] = listeSommets[1];
+	            listeSommets[1] = sommet;
+	            indiceListe = 1;
+	        }
+	        else {
+	        	indiceListe ++;
+	        }
+	    }
 		
 		return new Graphe();
+	}
+
+	public boolean decharger(Sommet[] S,int sommet,Integer[][] V,Arc[][] A) {
+	    int h = S[sommet].getH();
+	    int debug = 1;
+	    boolean pousseeReussie = false;
+	    while (S[sommet].getE() > 0 && debug <= 100) {
+	        debug ++;
+	        for (int voisin : V[sommet]) {
+	            pousseeReussie = pousser(S,sommet,voisin,A);
+	        }
+	        elever(S,sommet,V,A);
+	    }
+	    return h < S[sommet].getH() || pousseeReussie;
 	}
 	
 	/**
@@ -82,13 +109,45 @@ public class Graphe implements Listes {
 		Arc arc = A[u][v];
 		
 		if(S[u].getE() > 0 && arc.getR() > 0 && S[u].getH() > S[v].getH()) {
-			int flot = min(S[u].getE(), arc.getR());
-	        A[u,v].ajoutR(-flot);
-	        A[v,u].r += flot
-	        S[u].e -= flot
-	        S[v].e += flot
+			int flot = Math.min(S[u].getE(), arc.getR());
+	        A[u][v].ajouterR(-flot);
+	        A[v][u].ajouterR(flot);
+	        S[u].ajouterE(-flot);
+	        S[v].ajouterE(flot);
+	        return true;
 		}
-		
-		return true;
+		else {
+			return false;
+		}
+	}
+	
+	public boolean elever(Sommet[] S,int indiceSommet,Integer[][] V,Arc[][] A) {
+	    // verification que le sommet déborde
+	    if (S[indiceSommet].getE() <= 0) {
+	        return false;
+	    }
+	
+	    // verification que les voisins sont tous trop eleves (on en profite pour calculer la hauteur minimum)
+	    int minH = Integer.MAX_VALUE;
+	    for (int indiceVoisin : V[indiceSommet]) { // parcours des sommets voisins à indiceSommet) {
+	        int hauteurVoisin = S[indiceVoisin].getH();
+	        if (hauteurVoisin < S[indiceSommet].getH() && A[indiceSommet][indiceVoisin].getR() > 0) {
+	            return false;
+	        }
+	        if (hauteurVoisin < minH) { // on a trouvé une nouvelle hauteur minimum
+	            minH = hauteurVoisin; // mise à jour de hauteur minimum
+	        }
+		}
+	
+	    // modification de la hauteur
+	    if (S[indiceSommet].getH() < 1 + minH) {
+	        S[indiceSommet].setH(1+minH);
+	    } else {
+	        S[indiceSommet].ajouterH(1);
+	    }
+	
+	    //println("indiceSommet = ",S[indiceSommet])
+	
+	    return true;
 	}
 }

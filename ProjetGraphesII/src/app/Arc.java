@@ -47,9 +47,9 @@ public class Arc {
 	
 	/**
 	 * Ajoute à r un delta résiduel.
-	 * @param ajoutR l'entier à ajouter à r.
+	 * @param deltaR l'entier à ajouter à r.
 	 */
-	public void ajouterR(int ajoutR) {
-		setR(r+ajoutR);
+	public void ajouterR(int deltaR) {
+		setR(r+deltaR);
 	}
 }

@@ -41,4 +41,36 @@ public class Sommet {
 	public int getH() {
 		return h;
 	}
+	
+	/**
+	 * Remplace la valeur de h par une nouvelle valeur donnée. 
+	 * @param nouveauH l'entier correspondant à la nouvelle hauteur.
+	 */
+	public void setH(int nouveauH) {
+		h = nouveauH;
+	}
+	
+	/**
+	 * Ajoute à h un delta.
+	 * @param deltaH l'entier à ajouter à h.
+	 */
+	public void ajouterH(int deltaH) {
+		setH(h+deltaH);
+	}
+	
+	/**
+	 * Remplace la valeur de e par une nouvelle valeur donnée. 
+	 * @param nouveauE l'entier correspondant à la nouvelle quantité débordante.
+	 */
+	public void setE(int nouveauE) {
+		e = nouveauE;
+	}
+	
+	/**
+	 * Ajoute à e un delta.
+	 * @param deltaE l'entier à ajouter à e.
+	 */
+	public void ajouterE(int deltaE) {
+		setE(e+deltaE);
+	}
 }
