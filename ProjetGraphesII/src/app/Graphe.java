@@ -14,41 +14,74 @@ import vendors.Listes;
  * Objet représentant une instance du graphe étudié dans le projet.
  */
 public class Graphe implements Listes {
-	private ArrayList<Integer> M;
+	/**
+	 * ArrayList d'arrayList d'entiers correspondant à la matrice d'adjacence du graphe.
+	 */
+	private ArrayList<ArrayList<Integer>> M;
+	/**
+	 * ArrayList des sommets du graphe.
+	 */
 	private ArrayList<Sommet> S;
-	private int nbSommets;
-	private ArrayList<ArrayList<Integer>> A;
+	/**
+	 * ArrayList d'arrayList d'arc correspondant à la matrice des arcs du graphe.
+	 */
+	private ArrayList<ArrayList<Arc>> A;
+	/**
+	 * LinkedList d'entiers correspondant aux voisins de chaque sommet. On considère voisins deux sommets reliés par un arc.
+	 */
 	private LinkedList<Integer> V;
 	
+	/**
+	 * Objet représentant une instance du graphe étudié dans ce projet.
+	 */
 	public Graphe() {
-		this.M = new ArrayList<Integer>();
+		this.M = new ArrayList<ArrayList<Integer>>();
 		this.S = new ArrayList<Sommet>();
-		this.nbSommets = 0;
-		this.A = new ArrayList<ArrayList<Integer>>();
+		this.A = new ArrayList<ArrayList<Arc>>();
 		this.V = new LinkedList<Integer>();
 	}
 	
-	public void setM(ArrayList<Integer> nouveauM) {
+	/**
+	 * Remplace la valeur de M par la valeur de nouveauM.
+	 * @param nouveauM la nouvelle valeur de M.
+	 */
+	public void setM(ArrayList<ArrayList<Integer>> nouveauM) {
 		M = nouveauM;
 	}
 	
+	/**
+	 * Remplace la valeur de S par la valeur de nouveauS.
+	 * @param nouveauS la nouvelle valeur de S.
+	 */
 	public void setS(ArrayList<Sommet> nouveauS) {
 		S = nouveauS;
 	}
 	
-	public void setA(ArrayList<ArrayList<Integer>> nouveauA) {
+	/**
+	 * Remplace la valeur de A par la valeur de nouveauA.
+	 * @param nouveauA la nouvelle valeur de A
+	 */
+	public void setA(ArrayList<ArrayList<Arc>> nouveauA) {
 		A = nouveauA;
 	}
 	
+	/**
+	 * Remplace la valeur de V par la valeur de nouveauV.
+	 * @param nouveauV la nouvelle valeur de V
+	 */
 	public void setV(LinkedList<Integer> nouveauV) {
 		V = nouveauV;
 	}
 	
-	public int preflotsAvant() {
+	/**
+	 * Retourne un nouveau graphe dans lequel on a effectué un algorithme de préflots avant.
+	 * @return nouveau graphe dans lequel on a effectué un algorithme de préflots avant.
+	 */
+	public Graphe preflotsAvant() {
 		
-		ArrayList<Integer> listeSommets = new ArrayList<Integer>(nbSommets);
+		ArrayList<Integer> listeSommets = new ArrayList<Integer>(S.size());
 		
 		
-		return 0;
+		return new Graphe();
 	}
 }

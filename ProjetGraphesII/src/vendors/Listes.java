@@ -7,6 +7,11 @@ package vendors;
 
 import java.util.ArrayList;
 
+/**
+ * L'interface Listes offre plusieurs méthodes default permettant de travailler facilement avec des listes.
+ *
+ * @see ArrayList
+ */
 public interface Listes {
 	/** 
 	 * Retourne une liste contenant les entiers croissants de l'intervalle [inf,sup]
