@@ -1,9 +1,20 @@
+/*
+ * Copyright (c) 2020, Jules Nicolas-Thouvenin and Lucas Baussay. All rights reserved.
+ *
+ */
+
 package vendors;
 
 import java.util.ArrayList;
 
 public interface Listes {
-	// retourne une liste contenant les entiers croissants de l'intervale [inf,sup]
+	/** 
+	 * Retourne une liste contenant les entiers croissants de l'intervalle [inf,sup]
+	 *  
+	 * @return      Un ArrayList d'entiers contenant les entiers triés entre inf et sup (inclus).
+	 * @param       inf le plus petit entier.
+	 * @param		sup le plus grand entier.
+	 */
 	default ArrayList<Integer> suiteEntiersCroissants(int inf,int sup) {
 		ArrayList<Integer> liste = new ArrayList<Integer>(sup-inf+1);
 		for(int indice = 0; indice <= (inf-sup+1); indice ++) {

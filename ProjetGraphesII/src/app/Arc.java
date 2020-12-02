@@ -1,5 +1,13 @@
+/*
+ * Copyright (c) 2020, Jules Nicolas-Thouvenin and Lucas Baussay. All rights reserved.
+ *
+ */
+
 package app;
 
+/**
+ * Objet représentant une instance d'un arc du graphe.
+ */
 public class Arc {
 	private int r;
 	

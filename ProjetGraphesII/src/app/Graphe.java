@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2020, Jules Nicolas-Thouvenin and Lucas Baussay. All rights reserved.
+ *
+ */
+
 package app;
 
 import java.util.ArrayList;
@@ -5,6 +10,9 @@ import java.util.LinkedList;
 
 import vendors.Listes;
 
+/**
+ * Objet représentant une instance du graphe étudié dans le projet.
+ */
 public class Graphe implements Listes {
 	private ArrayList<Integer> M;
 	private ArrayList<Sommet> S;
