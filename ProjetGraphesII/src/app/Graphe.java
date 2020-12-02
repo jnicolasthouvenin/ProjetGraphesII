@@ -68,7 +68,7 @@ public class Graphe implements Listes {
 		
 		Integer[][] listeSommets = suiteEntiersCroissants(2,(S.length-1));
 		// initialisation
-	    for(int voisin : V.get(1)){
+	    for(int voisin : V[1]){
 	    	pousser(S,1,voisin,A);
 	    }
 		
@@ -78,8 +78,17 @@ public class Graphe implements Listes {
 	/**
 	 * Pousse une quantité de flot du sommet u au sommet v
 	 */
-	public boolean pousser(ArrayList<Sommet> S,int u,int v,ArrayList<ArrayList<Arc>> A) {
-		Arc arc = A.get(u).get(v);
+	public boolean pousser(Sommet[] S,int u,int v,Arc[][] A) {
+		Arc arc = A[u][v];
+		
+		if(S[u].getE() > 0 && arc.getR() > 0 && S[u].getH() > S[v].getH()) {
+			int flot = min(S[u].getE(), arc.getR());
+	        A[u,v].ajoutR(-flot);
+	        A[v,u].r += flot
+	        S[u].e -= flot
+	        S[v].e += flot
+		}
+		
 		return true;
 	}
 }

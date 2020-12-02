@@ -170,7 +170,7 @@ function decharger(S::Array{Sommet,1},sommet::Int,V::Vector{Vector{Int}},A::Arra
     while S[sommet].e > 0 && debug <= 100
         debug += 1
         for voisin in V[sommet]
-            pousseeReussie = pousser(S,sommet,voisin,A)
+            pousseeReussie = pousserReussie || pousser(S,sommet,voisin,A)
         end
         elever(S,sommet,V,A)
     end
