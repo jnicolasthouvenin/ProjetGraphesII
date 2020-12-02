@@ -88,6 +88,14 @@ public class Graphe implements Listes {
 		return new Graphe();
 	}
 
+	/**
+	 * Retourne si oui ou non la décharge du sommet u a eu un quelquonque effet sur le réseau.
+	 * @param S la liste des sommets
+	 * @param sommet l'indice du sommet à décharger
+	 * @param V la matrice des voisins
+	 * @param A la matrice des arcs
+	 * @return
+	 */
 	public boolean decharger(Sommet[] S,int sommet,Integer[][] V,Arc[][] A) {
 	    int h = S[sommet].getH();
 	    int debug = 1;
@@ -103,7 +111,12 @@ public class Graphe implements Listes {
 	}
 	
 	/**
-	 * Pousse une quantité de flot du sommet u au sommet v
+	 * Retourne si oui ou non la poussée a été possible et donc effectuée
+	 * @param S la liste des sommets
+	 * @param u l'indice du sommet à pousser
+	 * @param v l'indice du sommet vers qui pousser
+	 * @param A la matrice des arcs
+	 * @return si oui ou non la poussée a été possible et donc effectuée
 	 */
 	public boolean pousser(Sommet[] S,int u,int v,Arc[][] A) {
 		Arc arc = A[u][v];
@@ -121,6 +134,14 @@ public class Graphe implements Listes {
 		}
 	}
 	
+	/**
+	 * Retourne si oui ou non l'élévation a été possible et donc effectuée
+	 * @param S la liste des sommets
+	 * @param indiceSommet l'indice du sommet à élever
+	 * @param V la matrice des voisins
+	 * @param A la matrice des arcs
+	 * @return si oui ou non l'élévation a été possible et donc effectuée
+	 */
 	public boolean elever(Sommet[] S,int indiceSommet,Integer[][] V,Arc[][] A) {
 	    // verification que le sommet déborde
 	    if (S[indiceSommet].getE() <= 0) {
