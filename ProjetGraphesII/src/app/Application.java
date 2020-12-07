@@ -60,7 +60,7 @@ public class Application implements Affichages {
 
 	    A[6][7] = new Arc(7);
 	    A[7][6] = new Arc(0);
-		Sommet[] S = {new Sommet(1000,6),new Sommet(),new Sommet(),new Sommet(),new Sommet(),new Sommet(),new Sommet(),new Sommet()};
+		Sommet[] S = {new Sommet(1000,8),new Sommet(),new Sommet(),new Sommet(),new Sommet(),new Sommet(),new Sommet(),new Sommet()};
 		Integer[][] V = {{1,2,3},{0,4,5},{0,4,6},{0,5,6},{1,2,7},{1,3,7},{2,3,7},{4,5,6}};
 		Graphe G = new Graphe(S,A,V);
 		
