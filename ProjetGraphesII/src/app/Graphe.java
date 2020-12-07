@@ -79,7 +79,7 @@ public class Graphe implements Listes, Debug {
 		clearDebug();
 		debug("nbSommets = "+nbSommets);
 		
-		Integer[] listeSommets = suiteEntiersCroissants(2,(nbSommets-1));
+		Integer[] listeSommets = suiteEntiersCroissants(1,(nbSommets-1));
 		// initialisation
 	    for(int voisin : V[0]){
 	    	pousser(S,0,voisin,A);
