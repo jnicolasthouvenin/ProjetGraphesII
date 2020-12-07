@@ -21,8 +21,9 @@ public interface Listes {
 	 * @param		sup le plus grand entier.
 	 */
 	default Integer[] suiteEntiersCroissants(int inf,int sup) {
+		System.out.println("inf"+inf+","+"sup "+sup);
 		Integer[] liste = new Integer[sup-inf+1];
-		for(int indice = 0; indice < (inf-sup+1); indice ++) {
+		for(int indice = 0; indice < (sup-inf+1); indice ++) {
 			liste[indice] = indice + inf;
 		}
 		return liste;

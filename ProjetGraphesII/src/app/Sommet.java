@@ -27,6 +27,14 @@ public class Sommet {
 	}
 	
 	/**
+	 * Construit un nouveau Sommet avec les attributs donnés.
+	 */
+	public Sommet(int e,int h) {
+		this.e = e;
+		this.h = h;
+	}
+	
+	/**
 	 * Retourne la quantité entière de flot débordante.
 	 * @return e la quantité entière de flot débordante.
 	 */

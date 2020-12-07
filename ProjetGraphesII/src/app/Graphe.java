@@ -5,12 +5,15 @@
 
 package app;
 
+import java.io.IOException;
+
+import vendors.Debug;
 import vendors.Listes;
 
 /**
  * Objet représentant une instance du graphe étudié dans le projet.
  */
-public class Graphe implements Listes {
+public class Graphe implements Listes, Debug {
 	/**
 	 * ArrayList des sommets du graphe.
 	 */
@@ -31,6 +34,15 @@ public class Graphe implements Listes {
 		this.S = new Sommet[0];
 		this.A = new Arc[0][0];
 		this.V = new Integer[0][0];
+	}
+	
+	/**
+	 * Objet représentant une instance du graphe étudié dans ce projet et possédant les attributs donnés.
+	 */
+	public Graphe(Sommet[] S, Arc[][] A, Integer[][] V) {
+		this.S = S;
+		this.A = A;
+		this.V = V;
 	}
 	
 	/**
@@ -60,25 +72,30 @@ public class Graphe implements Listes {
 	/**
 	 * Retourne un nouveau graphe dans lequel on a effectué un algorithme de préflots avant.
 	 * @return nouveau graphe dans lequel on a effectué un algorithme de préflots avant.
+	 * @throws IOException 
 	 */
-	public Graphe preflotsAvant() {
+	public Graphe preflotsAvant() throws IOException {
 		int nbSommets = S.length;
+		clearDebug();
+		debug("nbSommets = "+nbSommets);
+		
 		Integer[] listeSommets = suiteEntiersCroissants(2,(nbSommets-1));
 		// initialisation
-	    for(int voisin : V[1]){
-	    	pousser(S,1,voisin,A);
+	    for(int voisin : V[0]){
+	    	pousser(S,0,voisin,A);
 	    }
 	    
-	    int indiceListe = 1;
+	    int indiceListe = 0;
 	    int debug = 1;
-	    while(indiceListe <= nbSommets-2 && debug <= 100) {
+	    while(indiceListe < nbSommets-2 && debug <= 100) {
+	    	debug("[indiceList = "+indiceListe);
 	    	debug ++;
 	    	int sommet = listeSommets[indiceListe];
 	        boolean hauteurModifiee = decharger(S,sommet,V,A);
 	        if(hauteurModifiee) {
-	        	listeSommets[indiceListe] = listeSommets[1];
-	            listeSommets[1] = sommet;
-	            indiceListe = 1;
+	        	listeSommets[indiceListe] = listeSommets[0];
+	            listeSommets[0] = sommet;
+	            indiceListe = 0;
 	        }
 	        else {
 	        	indiceListe ++;
@@ -95,8 +112,10 @@ public class Graphe implements Listes {
 	 * @param V la matrice des voisins
 	 * @param A la matrice des arcs
 	 * @return
+	 * @throws IOException 
 	 */
-	public boolean decharger(Sommet[] S,int sommet,Integer[][] V,Arc[][] A) {
+	public boolean decharger(Sommet[] S,int sommet,Integer[][] V,Arc[][] A) throws IOException {
+		debug("[décharger] "+sommet);
 	    int h = S[sommet].getH();
 	    int debug = 1;
 	    boolean pousseeReussie = false;
@@ -117,11 +136,20 @@ public class Graphe implements Listes {
 	 * @param v l'indice du sommet vers qui pousser
 	 * @param A la matrice des arcs
 	 * @return si oui ou non la poussée a été possible et donc effectuée
+	 * @throws IOException 
 	 */
-	public boolean pousser(Sommet[] S,int u,int v,Arc[][] A) {
+	public boolean pousser(Sommet[] S,int u,int v,Arc[][] A) throws IOException {
 		Arc arc = A[u][v];
 		
+		/*debug("u = "+u);
+		debug("v = "+v);
+		debug("S[u].getE = "+S[u].getE());
+		debug("arc.getR = "+arc.getR());
+		debug("S[u].getH = "+S[u].getH());
+		debug("S[v].getH = "+S[v].getH());*/
+		
 		if(S[u].getE() > 0 && arc.getR() > 0 && S[u].getH() > S[v].getH()) {
+			debug("[pousser "+u+" vers "+v+" ]");
 			int flot = Math.min(S[u].getE(), arc.getR());
 	        A[u][v].ajouterR(-flot);
 	        A[v][u].ajouterR(flot);
@@ -130,6 +158,7 @@ public class Graphe implements Listes {
 	        return true;
 		}
 		else {
+			debug("on ne peux pas pousser "+u+" vers "+v);
 			return false;
 		}
 	}
@@ -141,8 +170,9 @@ public class Graphe implements Listes {
 	 * @param V la matrice des voisins
 	 * @param A la matrice des arcs
 	 * @return si oui ou non l'élévation a été possible et donc effectuée
+	 * @throws IOException 
 	 */
-	public boolean elever(Sommet[] S,int indiceSommet,Integer[][] V,Arc[][] A) {
+	public boolean elever(Sommet[] S,int indiceSommet,Integer[][] V,Arc[][] A) throws IOException {
 	    // verification que le sommet déborde
 	    if (S[indiceSommet].getE() <= 0) {
 	        return false;
@@ -167,7 +197,7 @@ public class Graphe implements Listes {
 	        S[indiceSommet].ajouterH(1);
 	    }
 	
-	    //println("indiceSommet = ",S[indiceSommet])
+	    debug("elever "+indiceSommet);//println("indiceSommet = ",S[indiceSommet])
 	
 	    return true;
 	}
