@@ -7,12 +7,12 @@ package app;
 
 import java.io.IOException;
 
-import vendors.Affichages;
+import vendors.Tools;
 
 /**
  * Objet représentant une instance de l'application implémentée dans le cadre de ce proket.
  */
-public class Application implements Affichages {
+public class Application extends Tools {
 
 	/**
 	 * Fonction principale.
@@ -70,23 +70,5 @@ public class Application implements Affichages {
 		afficherSommets(S);
 		
 		System.out.println("Fin");
-	}
-
-	private static void afficherArcs(Arc[][] A) {
-		int l = A.length;
-		for (int ligne = 0; ligne < l; ligne ++) {
-			for (int colonne = 0; colonne < l; colonne ++) {
-				Arc arc = A[ligne][colonne];
-				if (arc != null) {
-					System.out.println("("+ligne+","+colonne+") = "+arc.getR());
-				}
-			}
-		}
-	}
-
-	private static void afficherSommets(Sommet[] S) {
-		for (Sommet sommet : S) {
-			System.out.println("Sommet("+sommet.getE()+","+sommet.getH()+")");
-		}
 	}
 }

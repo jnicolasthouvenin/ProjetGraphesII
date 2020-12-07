@@ -7,13 +7,12 @@ package app;
 
 import java.io.IOException;
 
-import vendors.Debug;
-import vendors.Listes;
+import vendors.Tools;
 
 /**
  * Objet représentant une instance du graphe étudié dans le projet.
  */
-public class Graphe implements Listes, Debug {
+public class Graphe extends Tools {
 	/**
 	 * ArrayList des sommets du graphe.
 	 */
