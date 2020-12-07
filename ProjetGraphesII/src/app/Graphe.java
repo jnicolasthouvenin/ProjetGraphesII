@@ -78,7 +78,7 @@ public class Graphe implements Listes, Debug {
 		int nbSommets = S.length;
 		clearDebug();
 		debug("nbSommets = "+nbSommets);
-		
+		 
 		Integer[] listeSommets = suiteEntiersCroissants(1,(nbSommets-1));
 		// initialisation
 	    for(int voisin : V[0]){
