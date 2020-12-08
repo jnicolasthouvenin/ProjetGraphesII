@@ -5,4 +5,5 @@ Master 1 Optimization and Operational Research.
 
 # Sudents
 Lucas Baussay : LucasBaussay
+
 Jules Nicolas-Thouvenin : jnicolasthouvenin
