@@ -75,8 +75,8 @@ public class Graphe extends Tools {
 	 */
 	public Graphe preflotsAvant() throws IOException {
 		int nbSommets = S.length;
-		clearDebug();
-		debug("nbSommets = "+nbSommets);
+		//clearDebug();
+		//debug("nbSommets = "+nbSommets);
 		 
 		Integer[] listeSommets = suiteEntiersCroissants(1,(nbSommets-1));
 		// initialisation
@@ -87,7 +87,7 @@ public class Graphe extends Tools {
 	    int indiceListe = 0;
 	    int debug = 1;
 	    while(indiceListe < nbSommets-2 && debug <= 100) {
-	    	debug("[indiceList = "+indiceListe);
+	    	//debug("[indiceList = "+indiceListe);
 	    	debug ++;
 	    	int sommet = listeSommets[indiceListe];
 	        boolean hauteurModifiee = decharger(S,sommet,V,A);
@@ -114,7 +114,7 @@ public class Graphe extends Tools {
 	 * @throws IOException 
 	 */
 	public boolean decharger(Sommet[] S,int sommet,Integer[][] V,Arc[][] A) throws IOException {
-		debug("[décharger] "+sommet);
+		//debug("[décharger] "+sommet);
 	    int h = S[sommet].getH();
 	    int debug = 1;
 	    boolean pousseeReussie = false;
@@ -148,7 +148,7 @@ public class Graphe extends Tools {
 		debug("S[v].getH = "+S[v].getH());*/
 		
 		if(S[u].getE() > 0 && arc.getR() > 0 && S[u].getH() > S[v].getH()) {
-			debug("[pousser "+u+" vers "+v+" ]");
+			//debug("[pousser "+u+" vers "+v+" ]");
 			int flot = Math.min(S[u].getE(), arc.getR());
 	        A[u][v].ajouterR(-flot);
 	        A[v][u].ajouterR(flot);
@@ -157,7 +157,7 @@ public class Graphe extends Tools {
 	        return true;
 		}
 		else {
-			debug("on ne peux pas pousser "+u+" vers "+v);
+			//debug("on ne peux pas pousser "+u+" vers "+v);
 			return false;
 		}
 	}
@@ -196,7 +196,7 @@ public class Graphe extends Tools {
 	        S[indiceSommet].ajouterH(1);
 	    }
 	
-	    debug("elever "+indiceSommet);//println("indiceSommet = ",S[indiceSommet])
+	    //debug("elever "+indiceSommet);//println("indiceSommet = ",S[indiceSommet])
 	
 	    return true;
 	}
