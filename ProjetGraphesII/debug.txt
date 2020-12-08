@@ -1,2 +1,421 @@
-bonjour
-bonjour
+nbSommets = 8
+[pousser 0 vers 1 ]
+[pousser 0 vers 2 ]
+[pousser 0 vers 3 ]
+[indiceList = 0
+[décharger] 2
+on ne peux pas pousser 2 vers 0
+on ne peux pas pousser 2 vers 4
+on ne peux pas pousser 2 vers 6
+elever 2
+on ne peux pas pousser 2 vers 0
+[pousser 2 vers 4 ]
+on ne peux pas pousser 2 vers 6
+[indiceList = 0
+[décharger] 2
+[indiceList = 1
+[décharger] 3
+on ne peux pas pousser 3 vers 0
+on ne peux pas pousser 3 vers 5
+on ne peux pas pousser 3 vers 6
+elever 3
+on ne peux pas pousser 3 vers 0
+[pousser 3 vers 5 ]
+on ne peux pas pousser 3 vers 6
+[indiceList = 0
+[décharger] 3
+[indiceList = 1
+[décharger] 2
+[indiceList = 2
+[décharger] 4
+on ne peux pas pousser 4 vers 1
+on ne peux pas pousser 4 vers 2
+on ne peux pas pousser 4 vers 7
+elever 4
+on ne peux pas pousser 4 vers 1
+on ne peux pas pousser 4 vers 2
+on ne peux pas pousser 4 vers 7
+elever 4
+on ne peux pas pousser 4 vers 1
+[pousser 4 vers 2 ]
+on ne peux pas pousser 4 vers 7
+[indiceList = 0
+[décharger] 4
+[indiceList = 1
+[décharger] 2
+on ne peux pas pousser 2 vers 0
+on ne peux pas pousser 2 vers 4
+[pousser 2 vers 6 ]
+[indiceList = 0
+[décharger] 2
+[indiceList = 1
+[décharger] 4
+[indiceList = 2
+[décharger] 3
+[indiceList = 3
+[décharger] 5
+on ne peux pas pousser 5 vers 1
+on ne peux pas pousser 5 vers 3
+on ne peux pas pousser 5 vers 7
+elever 5
+on ne peux pas pousser 5 vers 1
+on ne peux pas pousser 5 vers 3
+[pousser 5 vers 7 ]
+[indiceList = 0
+[décharger] 5
+[indiceList = 1
+[décharger] 4
+[indiceList = 2
+[décharger] 3
+[indiceList = 3
+[décharger] 2
+[indiceList = 4
+[décharger] 6
+on ne peux pas pousser 6 vers 2
+on ne peux pas pousser 6 vers 3
+on ne peux pas pousser 6 vers 7
+elever 6
+on ne peux pas pousser 6 vers 2
+on ne peux pas pousser 6 vers 3
+[pousser 6 vers 7 ]
+[indiceList = 0
+[décharger] 6
+[indiceList = 1
+[décharger] 4
+[indiceList = 2
+[décharger] 3
+[indiceList = 3
+[décharger] 2
+[indiceList = 4
+[décharger] 5
+[indiceList = 5
+[décharger] 7
+on ne peux pas pousser 7 vers 4
+on ne peux pas pousser 7 vers 5
+on ne peux pas pousser 7 vers 6
+elever 7
+on ne peux pas pousser 7 vers 4
+[pousser 7 vers 5 ]
+[pousser 7 vers 6 ]
+[indiceList = 0
+[décharger] 7
+[indiceList = 1
+[décharger] 4
+[indiceList = 2
+[décharger] 3
+[indiceList = 3
+[décharger] 2
+[indiceList = 4
+[décharger] 5
+on ne peux pas pousser 5 vers 1
+on ne peux pas pousser 5 vers 3
+on ne peux pas pousser 5 vers 7
+elever 5
+on ne peux pas pousser 5 vers 1
+[pousser 5 vers 3 ]
+on ne peux pas pousser 5 vers 7
+[indiceList = 0
+[décharger] 5
+[indiceList = 1
+[décharger] 4
+[indiceList = 2
+[décharger] 3
+on ne peux pas pousser 3 vers 0
+on ne peux pas pousser 3 vers 5
+on ne peux pas pousser 3 vers 6
+elever 3
+on ne peux pas pousser 3 vers 0
+on ne peux pas pousser 3 vers 5
+[pousser 3 vers 6 ]
+[indiceList = 0
+[décharger] 3
+[indiceList = 1
+[décharger] 4
+[indiceList = 2
+[décharger] 5
+[indiceList = 3
+[décharger] 2
+[indiceList = 4
+[décharger] 7
+[indiceList = 5
+[décharger] 6
+on ne peux pas pousser 6 vers 2
+on ne peux pas pousser 6 vers 3
+on ne peux pas pousser 6 vers 7
+elever 6
+[pousser 6 vers 2 ]
+on ne peux pas pousser 6 vers 3
+on ne peux pas pousser 6 vers 7
+elever 6
+on ne peux pas pousser 6 vers 2
+[pousser 6 vers 3 ]
+on ne peux pas pousser 6 vers 7
+[indiceList = 0
+[décharger] 6
+[indiceList = 1
+[décharger] 4
+[indiceList = 2
+[décharger] 5
+[indiceList = 3
+[décharger] 2
+on ne peux pas pousser 2 vers 0
+on ne peux pas pousser 2 vers 4
+on ne peux pas pousser 2 vers 6
+elever 2
+on ne peux pas pousser 2 vers 0
+[pousser 2 vers 4 ]
+on ne peux pas pousser 2 vers 6
+[indiceList = 0
+[décharger] 2
+[indiceList = 1
+[décharger] 4
+on ne peux pas pousser 4 vers 1
+on ne peux pas pousser 4 vers 2
+on ne peux pas pousser 4 vers 7
+elever 4
+on ne peux pas pousser 4 vers 1
+on ne peux pas pousser 4 vers 2
+on ne peux pas pousser 4 vers 7
+elever 4
+on ne peux pas pousser 4 vers 1
+[pousser 4 vers 2 ]
+on ne peux pas pousser 4 vers 7
+[indiceList = 0
+[décharger] 4
+[indiceList = 1
+[décharger] 2
+on ne peux pas pousser 2 vers 0
+on ne peux pas pousser 2 vers 4
+on ne peux pas pousser 2 vers 6
+elever 2
+on ne peux pas pousser 2 vers 0
+on ne peux pas pousser 2 vers 4
+[pousser 2 vers 6 ]
+[indiceList = 0
+[décharger] 2
+[indiceList = 1
+[décharger] 4
+[indiceList = 2
+[décharger] 5
+[indiceList = 3
+[décharger] 6
+on ne peux pas pousser 6 vers 2
+on ne peux pas pousser 6 vers 3
+[pousser 6 vers 7 ]
+[indiceList = 0
+[décharger] 6
+[indiceList = 1
+[décharger] 4
+[indiceList = 2
+[décharger] 5
+[indiceList = 3
+[décharger] 2
+[indiceList = 4
+[décharger] 7
+on ne peux pas pousser 7 vers 4
+on ne peux pas pousser 7 vers 5
+on ne peux pas pousser 7 vers 6
+elever 7
+on ne peux pas pousser 7 vers 4
+on ne peux pas pousser 7 vers 5
+on ne peux pas pousser 7 vers 6
+elever 7
+on ne peux pas pousser 7 vers 4
+on ne peux pas pousser 7 vers 5
+[pousser 7 vers 6 ]
+[indiceList = 0
+[décharger] 7
+[indiceList = 1
+[décharger] 4
+[indiceList = 2
+[décharger] 5
+[indiceList = 3
+[décharger] 2
+[indiceList = 4
+[décharger] 6
+on ne peux pas pousser 6 vers 2
+on ne peux pas pousser 6 vers 3
+on ne peux pas pousser 6 vers 7
+elever 6
+on ne peux pas pousser 6 vers 2
+on ne peux pas pousser 6 vers 3
+on ne peux pas pousser 6 vers 7
+elever 6
+[pousser 6 vers 2 ]
+on ne peux pas pousser 6 vers 3
+on ne peux pas pousser 6 vers 7
+[indiceList = 0
+[décharger] 6
+[indiceList = 1
+[décharger] 4
+[indiceList = 2
+[décharger] 5
+[indiceList = 3
+[décharger] 2
+on ne peux pas pousser 2 vers 0
+on ne peux pas pousser 2 vers 4
+on ne peux pas pousser 2 vers 6
+elever 2
+on ne peux pas pousser 2 vers 0
+[pousser 2 vers 4 ]
+on ne peux pas pousser 2 vers 6
+[indiceList = 0
+[décharger] 2
+[indiceList = 1
+[décharger] 4
+on ne peux pas pousser 4 vers 1
+on ne peux pas pousser 4 vers 2
+on ne peux pas pousser 4 vers 7
+elever 4
+on ne peux pas pousser 4 vers 1
+on ne peux pas pousser 4 vers 2
+on ne peux pas pousser 4 vers 7
+elever 4
+on ne peux pas pousser 4 vers 1
+[pousser 4 vers 2 ]
+on ne peux pas pousser 4 vers 7
+[indiceList = 0
+[décharger] 4
+[indiceList = 1
+[décharger] 2
+on ne peux pas pousser 2 vers 0
+on ne peux pas pousser 2 vers 4
+on ne peux pas pousser 2 vers 6
+elever 2
+on ne peux pas pousser 2 vers 0
+on ne peux pas pousser 2 vers 4
+[pousser 2 vers 6 ]
+[indiceList = 0
+[décharger] 2
+[indiceList = 1
+[décharger] 4
+[indiceList = 2
+[décharger] 5
+[indiceList = 3
+[décharger] 6
+on ne peux pas pousser 6 vers 2
+on ne peux pas pousser 6 vers 3
+[pousser 6 vers 7 ]
+[indiceList = 0
+[décharger] 6
+[indiceList = 1
+[décharger] 4
+[indiceList = 2
+[décharger] 5
+[indiceList = 3
+[décharger] 2
+[indiceList = 4
+[décharger] 7
+on ne peux pas pousser 7 vers 4
+on ne peux pas pousser 7 vers 5
+on ne peux pas pousser 7 vers 6
+elever 7
+on ne peux pas pousser 7 vers 4
+on ne peux pas pousser 7 vers 5
+on ne peux pas pousser 7 vers 6
+elever 7
+on ne peux pas pousser 7 vers 4
+on ne peux pas pousser 7 vers 5
+[pousser 7 vers 6 ]
+[indiceList = 0
+[décharger] 7
+[indiceList = 1
+[décharger] 4
+[indiceList = 2
+[décharger] 5
+[indiceList = 3
+[décharger] 2
+[indiceList = 4
+[décharger] 6
+on ne peux pas pousser 6 vers 2
+on ne peux pas pousser 6 vers 3
+on ne peux pas pousser 6 vers 7
+elever 6
+on ne peux pas pousser 6 vers 2
+on ne peux pas pousser 6 vers 3
+on ne peux pas pousser 6 vers 7
+elever 6
+[pousser 6 vers 2 ]
+on ne peux pas pousser 6 vers 3
+on ne peux pas pousser 6 vers 7
+[indiceList = 0
+[décharger] 6
+[indiceList = 1
+[décharger] 4
+[indiceList = 2
+[décharger] 5
+[indiceList = 3
+[décharger] 2
+on ne peux pas pousser 2 vers 0
+on ne peux pas pousser 2 vers 4
+on ne peux pas pousser 2 vers 6
+elever 2
+[pousser 2 vers 0 ]
+on ne peux pas pousser 2 vers 4
+on ne peux pas pousser 2 vers 6
+[indiceList = 0
+[décharger] 2
+[indiceList = 1
+[décharger] 4
+[indiceList = 2
+[décharger] 5
+[indiceList = 3
+[décharger] 6
+[indiceList = 4
+[décharger] 7
+[indiceList = 5
+[décharger] 3
+on ne peux pas pousser 3 vers 0
+on ne peux pas pousser 3 vers 5
+on ne peux pas pousser 3 vers 6
+elever 3
+on ne peux pas pousser 3 vers 0
+[pousser 3 vers 5 ]
+on ne peux pas pousser 3 vers 6
+[indiceList = 0
+[décharger] 3
+[indiceList = 1
+[décharger] 4
+[indiceList = 2
+[décharger] 5
+on ne peux pas pousser 5 vers 1
+on ne peux pas pousser 5 vers 3
+on ne peux pas pousser 5 vers 7
+elever 5
+on ne peux pas pousser 5 vers 1
+on ne peux pas pousser 5 vers 3
+on ne peux pas pousser 5 vers 7
+elever 5
+on ne peux pas pousser 5 vers 1
+[pousser 5 vers 3 ]
+on ne peux pas pousser 5 vers 7
+[indiceList = 0
+[décharger] 5
+[indiceList = 1
+[décharger] 4
+[indiceList = 2
+[décharger] 3
+on ne peux pas pousser 3 vers 0
+on ne peux pas pousser 3 vers 5
+on ne peux pas pousser 3 vers 6
+elever 3
+on ne peux pas pousser 3 vers 0
+[pousser 3 vers 5 ]
+on ne peux pas pousser 3 vers 6
+[indiceList = 0
+[décharger] 3
+[indiceList = 1
+[décharger] 4
+[indiceList = 2
+[décharger] 5
+on ne peux pas pousser 5 vers 1
+on ne peux pas pousser 5 vers 3
+on ne peux pas pousser 5 vers 7
+elever 5
+on ne peux pas pousser 5 vers 1
+on ne peux pas pousser 5 vers 3
+on ne peux pas pousser 5 vers 7
+elever 5
+on ne peux pas pousser 5 vers 1
+[pousser 5 vers 3 ]
+on ne peux pas pousser 5 vers 7
