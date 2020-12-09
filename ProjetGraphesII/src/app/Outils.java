@@ -27,7 +27,7 @@ public class Outils {
 	*  @throws		IOException
 	*/	
 	public static Equipe[] lireFichier(String fileName) throws NumberFormatException, IOException{
-		File file = new File("data/"+fileName);
+		File file = new File("src/app/"+fileName);
 		BufferedReader b = new BufferedReader(new FileReader(file));
 		
 		int nbEquipe = Integer.parseInt( b.readLine() );
@@ -240,7 +240,6 @@ public class Outils {
 	* @param		sup le plus grand entier.
 	*/
 	public static Integer[] suiteEntiersCroissants(int inf,int sup) {
-		System.out.println("inf"+inf+","+"sup "+sup);
 		Integer[] liste = new Integer[sup-inf+1];
 		for(int indice = 0; indice < (sup-inf+1); indice ++) {
 			liste[indice] = indice + inf;

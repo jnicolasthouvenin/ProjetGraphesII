@@ -48,7 +48,7 @@ public class Equipe extends Outils implements Comparable<Equipe>{
 		this.nbWins = nbWins;
 		this.remainMatch = remainMatch;
 		this.listMatch = listMatch;
-		this.setEstElim(false);
+		this.estElim = false;
 	}
 
 	/**
@@ -100,5 +100,9 @@ public class Equipe extends Outils implements Comparable<Equipe>{
 
 	public void setEstElim(boolean estElim) {
 		this.estElim = estElim;
+	}
+
+	public boolean getEstElim() {
+		return estElim;
 	}
 }

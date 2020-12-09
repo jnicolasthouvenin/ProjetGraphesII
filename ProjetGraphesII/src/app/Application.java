@@ -20,7 +20,7 @@ public class Application extends Outils {
 	 * @throws IOException 
 	 */
 	public static void main(String[] args) throws IOException {
-		System.out.println("Hello World !");
+		/*System.out.println("Hello World !");
 		
 		Arc[][] A = new Arc[8][8];
 		System.out.println(A[1][1]);
@@ -81,37 +81,49 @@ public class Application extends Outils {
 		balti.afficherGraphe();
 		
 		int numEquipe = 2;
-		System.out.println("estEliminee("+numEquipe+",equipes) = "+TestEliminationEquipe(numEquipe,equipes));
+		System.out.println("estEliminee("+numEquipe+",equipes) = "+TestEliminationEquipe(numEquipe,equipes));*/
 	
-		System.out.println(TestEliminationToutes(equipes));
+		Equipe[] equipes = lireFichier( "JDD1.txt" );
+		
+		TestEliminationToutes(equipes);
+		
+		affichageResultats(equipes);
+	}
+	
+	public static void affichageResultats(Equipe[] equipes) {
+		System.out.println("Résultats :");
+		for (Equipe equipe : equipes) {
+			String msg = "";
+			if (equipe.getEstElim()) { msg = " est éliminée."; }
+			else { msg = " n'est pas éliminée."; }
+			System.out.println(equipe.getName()+ msg);
+		}
 	}
 	
 	public static boolean TestEliminationEquipe(int indiceEquipe, Equipe[] equipes) throws IOException {
 		Graphe grapheEquipe = ConstructionReseau(indiceEquipe, equipes);
 		grapheEquipe.preflotsAvant();
-		equipes[indiceEquipe-1].setEstElim(!grapheEquipe.sourceSaturee());
-		return !grapheEquipe.sourceSaturee();
+		boolean sourceEstSaturee = grapheEquipe.sourceSaturee();
+		equipes[indiceEquipe-1].setEstElim(!sourceEstSaturee);
+		return !sourceEstSaturee;
 	}
 	
-	public static boolean TestEliminationToutes(Equipe[] equipes) throws IOException {
+	public static void TestEliminationToutes(Equipe[] equipes) throws IOException {
 		Equipe[] copiedEquipes = Arrays.copyOf(equipes, equipes.length);
 		Arrays.sort(copiedEquipes);
 		int iterCopiedEquipes = 0;
 		boolean estElim = false;
 		
-		while (iterCopiedEquipes<equipes.length && !estElim) {
+		while (iterCopiedEquipes < equipes.length && !estElim) {
 			Equipe equipe = copiedEquipes[iterCopiedEquipes];
 		
 			estElim = TestEliminationEquipe(equipe.getIndice(), equipes);
 			iterCopiedEquipes++;
-			
 		}
 		
-		for (int iterLoose = iterCopiedEquipes+1; iterLoose < equipes.length; iterLoose++) {
+		for (int iterLoose = iterCopiedEquipes; iterLoose < equipes.length; iterLoose++) {
 			equipes[copiedEquipes[iterLoose].getIndice()-1].setEstElim(true);
 		}
-		
-		return estElim;
 	}
 }
 
