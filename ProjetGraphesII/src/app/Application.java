@@ -78,7 +78,16 @@ public class Application extends Outils {
 		afficherSommets(balti.getS());
 		
 		balti.afficherGraphe();
-	}	
+		
+		int numEquipe = 5;
+		System.out.println("estEliminee("+numEquipe+",equipes) = "+estEliminee(numEquipe,equipes));
+	}
+	
+	public static boolean estEliminee(int indiceEquipe, Equipe[] equipes) throws IOException {
+		Graphe grapheEquipe = ConstructionReseau(indiceEquipe, equipes);
+		grapheEquipe.preflotsAvant();
+		return !grapheEquipe.sourceSaturee();
+	}
 }
 
 //comit

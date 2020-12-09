@@ -27,6 +27,8 @@ public class Sommet {
 	public Sommet() {
 		this.e = 0;
 		this.h = 0;
+		this.equipe1 = -1;
+		this.equipe2 = -1;
 	}
 	
 	/**
@@ -35,12 +37,15 @@ public class Sommet {
 	public Sommet(int e,int h) {
 		this.e = e;
 		this.h = h;
+		this.equipe1 = -1;
+		this.equipe2 = -1;
 	}
 	
 	public Sommet(int e, int h, int equipe) {
 		this.e = e;
 		this.h = h;
 		this.equipe1 = equipe;
+		this.equipe2 = -1;
 	}
 	
 	public Sommet(int e, int h, int equipe1, int equipe2) {

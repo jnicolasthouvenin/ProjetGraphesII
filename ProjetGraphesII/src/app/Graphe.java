@@ -224,6 +224,28 @@ public class Graphe extends Outils {
 			}
 		}
 	}
+	
+	/**
+	 * Affiche en console le contenu du graphe (utile pour vérifier la bonne exécution du préflots)
+	 */
+	public boolean sourceSaturee() {
+		int indiceDernierSommet = 1;
+		Sommet sommet = S[indiceDernierSommet];
+		while (sommet.getEquipe2() != -1) {
+			indiceDernierSommet ++;
+			sommet = S[indiceDernierSommet];
+		}
+		indiceDernierSommet --;
+		int indiceCourant = 1;
+		boolean sourceSaturee = true;
+		while (sourceSaturee && indiceCourant <= indiceDernierSommet) {
+			if (A[0][indiceCourant].getR() != 0) {
+				sourceSaturee = false;
+			}
+			indiceCourant ++;
+		}
+		return sourceSaturee;
+	}
 }
 
 //comit
