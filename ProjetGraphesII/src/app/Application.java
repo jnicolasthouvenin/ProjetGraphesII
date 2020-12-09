@@ -20,8 +20,10 @@ public class Application extends Outils {
 	 * @throws IOException 
 	 */
 	public static void main(String[] args) throws IOException {
-		/*System.out.println("Hello World !");
-		
+		System.out.println("Hello World !");
+		Arc[][] A = new Arc[8][8];
+		Equipe[] equipes = lireFichier( "didact.dat" );
+		/*
 		Arc[][] A = new Arc[8][8];
 		System.out.println(A[1][1]);
 		A[0][1] = new Arc(6);
@@ -83,11 +85,11 @@ public class Application extends Outils {
 		int numEquipe = 2;
 		System.out.println("estEliminee("+numEquipe+",equipes) = "+TestEliminationEquipe(numEquipe,equipes));*/
 	
-		Equipe[] equipes = lireFichier( "JDD1.txt" );
+		/*Equipe[] equipes = lireFichier( "didact.dat" );
 		
 		TestEliminationToutes(equipes);
 		
-		affichageResultats(equipes);
+		affichageResultats(equipes);*/
 	}
 	
 	public static void affichageResultats(Equipe[] equipes) {
