@@ -7,12 +7,10 @@ package app;
 
 import java.io.IOException;
 
-import vendors.Tools;
-
 /**
  * Objet représentant une instance du graphe étudié dans le projet.
  */
-public class Graphe extends Tools {
+public class Graphe extends Outils {
 	/**
 	 * ArrayList des sommets du graphe.
 	 */
@@ -66,6 +64,22 @@ public class Graphe extends Tools {
 	 */
 	public void setV(Integer[][] nouveauV) {
 		V = nouveauV;
+	}
+
+	/**
+	 * Retourne la matrice des arcs
+	 * @return A la matrice des arcs
+	 */
+	public Arc[][] getA() {
+		return A;
+	}
+
+	/**
+	 * Retourne la liste des sommets
+	 * @return S la liste des sommets
+	 */
+	public Sommet[] getS() {
+		return S;
 	}
 	
 	/**
@@ -140,13 +154,6 @@ public class Graphe extends Tools {
 	public boolean pousser(Sommet[] S,int u,int v,Arc[][] A) throws IOException {
 		Arc arc = A[u][v];
 		
-		/*debug("u = "+u);
-		debug("v = "+v);
-		debug("S[u].getE = "+S[u].getE());
-		debug("arc.getR = "+arc.getR());
-		debug("S[u].getH = "+S[u].getH());
-		debug("S[v].getH = "+S[v].getH());*/
-		
 		if(S[u].getE() > 0 && arc.getR() > 0 && S[u].getH() > S[v].getH()) {
 			//debug("[pousser "+u+" vers "+v+" ]");
 			int flot = Math.min(S[u].getE(), arc.getR());
@@ -157,7 +164,6 @@ public class Graphe extends Tools {
 	        return true;
 		}
 		else {
-			//debug("on ne peux pas pousser "+u+" vers "+v);
 			return false;
 		}
 	}
@@ -196,17 +202,27 @@ public class Graphe extends Tools {
 	        S[indiceSommet].ajouterH(1);
 	    }
 	
-	    //debug("elever "+indiceSommet);//println("indiceSommet = ",S[indiceSommet])
-	
 	    return true;
 	}
-
-	public Arc[][] getA() {
-		return A;
-	}
-
-	public Sommet[] getS() {
-		return S;
+	
+	/**
+	 * Affiche en console le contenu du graphe (utile pour vérifier la bonne exécution du préflots)
+	 */
+	public void afficherGraphe() {
+		System.out.println("Flot dans le graphe :");
+		for(int ligne = 0; ligne < A.length; ligne ++) {
+			for (int colonne = ligne+1; colonne < A.length; colonne ++) {
+				Arc arcEndroit = A[ligne][colonne];
+				Arc arcEnvers = A[colonne][ligne];
+				if (arcEndroit != null) {
+					String capa = Integer.toString(arcEndroit.getR() + arcEnvers.getR());
+					if (arcEndroit.getR() + arcEnvers.getR() > 10000000) {
+						capa = "Inf";
+					}
+					System.out.println("("+ligne+","+colonne+") - "+arcEnvers.getR()+"/"+capa);
+				}
+			}
+		}
 	}
 }
 
