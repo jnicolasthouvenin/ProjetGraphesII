@@ -27,7 +27,7 @@ public class Outils {
 	*  @throws		IOException
 	*/	
 	public static Equipe[] lireFichier(String fileName) throws NumberFormatException, IOException{
-		File file = new File("src/app/"+fileName);
+		File file = new File("data/"+fileName);
 		BufferedReader b = new BufferedReader(new FileReader(file));
 		
 		int nbEquipe = Integer.parseInt( b.readLine() );
