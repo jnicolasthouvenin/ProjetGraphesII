@@ -128,27 +128,27 @@ public class Tools {
 	 *  @throws		IOException
 	 */	
 	public static Equipe[] lireFichierBis(String fileName) throws NumberFormatException, IOException{
-		File file = new File("../../data/"+fileName);
+		File file = new File("data/"+fileName);
 		BufferedReader b = new BufferedReader(new FileReader(file));
 		
 		int nbEquipe = Integer.parseInt( b.readLine() );
+		
 		Equipe[] equipes = new Equipe[nbEquipe];
 		
 		for (int iterEquipe = 0; iterEquipe < nbEquipe; iterEquipe++) {
 			String readLine = b.readLine();
 			String[] stringEquipe = readLine.split(" ");
 			
-			int ind = Integer.parseInt(stringEquipe[1]);
-			String name = stringEquipe[2];
-			int nbWins = Integer.parseInt(stringEquipe[3]);
-			int remain = Integer.parseInt(stringEquipe[4]);
+			int ind = Integer.parseInt(stringEquipe[0]);
+			String name = stringEquipe[1];
+			int nbWins = Integer.parseInt(stringEquipe[2]);
+			int remain = Integer.parseInt(stringEquipe[3]);
 			
 			Integer[] listMatch = new Integer[nbEquipe];
-			for (int iter = 5; iter < nbEquipe + 5; iter++) {
-				listMatch[iter-5] = Integer.parseInt(stringEquipe[iter]);
+			for (int iter = 0; iter < nbEquipe; iter++) {
+				listMatch[iter] = Integer.parseInt(stringEquipe[iter+4]);
 			}
-			
-			equipes[ind] = new Equipe(name, nbWins, remain, listMatch);
+			equipes[ind-1] = new Equipe(name, nbWins, remain, listMatch);
 		}
 		b.close();
 		return equipes;

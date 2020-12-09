@@ -74,14 +74,14 @@ public class Graphe extends Tools {
 	 * @throws IOException 
 	 */
 	public Graphe preflotsAvant() throws IOException {
-		int nbSommets = S.length;
+		int nbSommets = getS().length;
 		//clearDebug();
 		//debug("nbSommets = "+nbSommets);
 		 
 		Integer[] listeSommets = suiteEntiersCroissants(1,(nbSommets-1));
 		// initialisation
 	    for(int voisin : V[0]){
-	    	pousser(S,0,voisin,A);
+	    	pousser(getS(),0,voisin,getA());
 	    }
 	    
 	    int indiceListe = 0;
@@ -90,7 +90,7 @@ public class Graphe extends Tools {
 	    	//debug("[indiceList = "+indiceListe);
 	    	debug ++;
 	    	int sommet = listeSommets[indiceListe];
-	        boolean hauteurModifiee = decharger(S,sommet,V,A);
+	        boolean hauteurModifiee = decharger(getS(),sommet,V,getA());
 	        if(hauteurModifiee) {
 	        	listeSommets[indiceListe] = listeSommets[0];
 	            listeSommets[0] = sommet;
@@ -199,6 +199,14 @@ public class Graphe extends Tools {
 	    //debug("elever "+indiceSommet);//println("indiceSommet = ",S[indiceSommet])
 	
 	    return true;
+	}
+
+	public Arc[][] getA() {
+		return A;
+	}
+
+	public Sommet[] getS() {
+		return S;
 	}
 }
 
