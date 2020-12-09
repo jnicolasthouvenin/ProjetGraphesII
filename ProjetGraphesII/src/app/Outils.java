@@ -47,7 +47,7 @@ public class Outils {
 			for (int iter = 0; iter < nbEquipe; iter++) {
 				listMatch[iter] = Integer.parseInt(stringEquipe[iter+4]);
 			}
-			equipes[ind-1] = new Equipe(name, nbWins, remain, listMatch);
+			equipes[ind-1] = new Equipe(ind, name, nbWins, remain, listMatch);
 		}
 		b.close();
 		return equipes;

@@ -6,6 +6,7 @@
 package app;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * Objet représentant une instance de l'application implémentée dans le cadre de ce proket.
@@ -79,14 +80,38 @@ public class Application extends Outils {
 		
 		balti.afficherGraphe();
 		
-		int numEquipe = 5;
-		System.out.println("estEliminee("+numEquipe+",equipes) = "+estEliminee(numEquipe,equipes));
+		int numEquipe = 2;
+		System.out.println("estEliminee("+numEquipe+",equipes) = "+TestEliminationEquipe(numEquipe,equipes));
+	
+		System.out.println(TestEliminationToutes(equipes));
 	}
 	
-	public static boolean estEliminee(int indiceEquipe, Equipe[] equipes) throws IOException {
+	public static boolean TestEliminationEquipe(int indiceEquipe, Equipe[] equipes) throws IOException {
 		Graphe grapheEquipe = ConstructionReseau(indiceEquipe, equipes);
 		grapheEquipe.preflotsAvant();
+		equipes[indiceEquipe-1].setEstElim(!grapheEquipe.sourceSaturee());
 		return !grapheEquipe.sourceSaturee();
+	}
+	
+	public static boolean TestEliminationToutes(Equipe[] equipes) throws IOException {
+		Equipe[] copiedEquipes = Arrays.copyOf(equipes, equipes.length);
+		Arrays.sort(copiedEquipes);
+		int iterCopiedEquipes = 0;
+		boolean estElim = false;
+		
+		while (iterCopiedEquipes<equipes.length && !estElim) {
+			Equipe equipe = copiedEquipes[iterCopiedEquipes];
+		
+			estElim = TestEliminationEquipe(equipe.getIndice(), equipes);
+			iterCopiedEquipes++;
+			
+		}
+		
+		for (int iterLoose = iterCopiedEquipes+1; iterLoose < equipes.length; iterLoose++) {
+			equipes[copiedEquipes[iterLoose].getIndice()-1].setEstElim(true);
+		}
+		
+		return estElim;
 	}
 }
 
