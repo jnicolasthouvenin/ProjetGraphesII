@@ -18,6 +18,9 @@ public class Sommet {
 	 */
 	private int h;
 	
+	private int equipe1;
+	private int equipe2;
+	
 	/**
 	 * Construit un nouveau Sommet non débordant de hauteur nulle.
 	 */
@@ -34,6 +37,19 @@ public class Sommet {
 		this.h = h;
 	}
 	
+	public Sommet(int e, int h, int equipe) {
+		this.e = e;
+		this.h = h;
+		this.equipe1 = equipe;
+	}
+	
+	public Sommet(int e, int h, int equipe1, int equipe2) {
+		this.e = e;
+		this.h = h;
+		this.equipe1 = equipe1;
+		this.equipe2 = equipe2;
+	}
+	
 	/**
 	 * Retourne la quantité entière de flot débordante.
 	 * @return e la quantité entière de flot débordante.
@@ -48,6 +64,14 @@ public class Sommet {
 	 */
 	public int getH() {
 		return h;
+	}
+	
+	public int getEquipe1() {
+		return equipe1;
+	}
+	
+	public int getEquipe2() {
+		return equipe2;
 	}
 	
 	/**
